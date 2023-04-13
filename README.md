@@ -31,7 +31,6 @@ I find the easies way to get started is to:
 * Always specify an exact version, not a version range. E.g. `gem 'sinatra', '2.2.4'`
 * Make sure your gem supports ruby 2.5 or earlier.
 * Run `bundle install --path vendor/bundle`
-* Add a line for the gem at the top of main.rb. E.g. `gem 'sinatra', '2.2.4'`
 
 # What's in this starter project?
 

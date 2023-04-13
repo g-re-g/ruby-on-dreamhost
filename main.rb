@@ -1,16 +1,10 @@
-# We specify the exact versions of the gems we want to work with here
-# just in case you are developing locally and a different version gets
-# loaded by default. Then you might use some features from a different
-# version of the gem that may not work on Dreamhost.
-gem 'sqlite3', '1.4.4'
-gem 'sinatra', '2.2.4'
-gem 'sinatra-contrib', '2.2.4'
-
+# Required to make vendored gems work correctly
 require 'rubygems'
 require 'bundler/setup'
+
+# Require more gems here
 require 'sinatra'
 require 'sinatra/contrib'
-require 'sinatra/json'
 require "sqlite3"
 
 # Create / Open the sqlite3 database
