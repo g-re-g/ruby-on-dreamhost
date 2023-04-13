@@ -5,7 +5,7 @@ A starter project for building sqlite3 backed sinatra apps hosted on Dreamhost's
 # Why?
 
 * Dreamhost supports ruby on it's shared hosting. 💎🚀
-* They only support ruby 2.5.1.. 🤦
+* They only support ruby 2.5.1. 🤦
 * A quick way to make sure everything works.
 * A quick way to start a new sqlite3 / sinatra project on Dreamhost.
 * There's some boiler plate to get things to play nice with passenger.
@@ -20,7 +20,6 @@ I find the easies way to get started is to:
   * eg: `rm my_new_subdomain.example.com`
 * clone this repo naming it the same as that folder you just removed.
   * eg: `git clone https://github.com/g-re-g/ruby-on-dreamhost my_new_subdomain.example.com`
-* run `bundle install` to install all the gems.
 * run `touch tmp/restart.txt` to restart passenger.
 * visit your site (eg: `my_new_subdomain.example.com`) and confirm everything is working.
 
@@ -56,3 +55,19 @@ just to make sure everything is working.
 ## `views/`
 This is where to put templates like erb templates. These a simple index template in there just to
 make sure everything is working.
+
+## `vendor/`
+This is where the gems are actually stored. Anytime you want to add another gem you should 
+put it in `Gemfile` with an exact version and run `bundle install --path vendor/bundle`.
+Since there's no real upgrading of the ruby version on Dreamhost's shared hosting your gem versions
+aren't likely to change much and having them cached protects you from anything changing in the
+future that would break your gem installs.
+
+## `tmp/`
+In here is `restart.txt` updating this file restarts passenger, aka reloads all the code
+for your application. Any time you update anything in here that would require a server restart
+you should `touch tmp/restart.txt`.
+
+## `.bundle/`
+Contains some small configuration for bundler. Tells bundler that the gems are installed in
+`vendor/bundle`.

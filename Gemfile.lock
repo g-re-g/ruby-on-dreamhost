@@ -23,7 +23,7 @@ GEM
     tilt (2.1.0)
 
 PLATFORMS
-  x86_64-darwin-21
+  ruby
 
 DEPENDENCIES
   sinatra (= 2.2.4)
@@ -31,4 +31,4 @@ DEPENDENCIES
   sqlite3 (= 1.4.4)
 
 BUNDLED WITH
-   2.3.7
+   1.16.1

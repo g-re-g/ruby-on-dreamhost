@@ -7,6 +7,7 @@ gem 'sinatra', '2.2.4'
 gem 'sinatra-contrib', '2.2.4'
 
 require 'rubygems'
+require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/contrib'
 require 'sinatra/json'
@@ -18,7 +19,8 @@ db = SQLite3::Database.new "test.db"
 # Create a table if it doesn't exist
 db.execute <<-SQL
   CREATE TABLE IF NOT EXISTS test (
-    id TEXT PRIMARY KEY
+    id TEXT PRIMARY KEY,
+    body TEXT
   );
 SQL
 
