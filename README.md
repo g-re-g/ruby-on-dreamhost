@@ -71,3 +71,9 @@ you should `touch tmp/restart.txt`.
 ## `.bundle/`
 Contains some small configuration for bundler. Tells bundler that the gems are installed in
 `vendor/bundle`.
+
+## `.tool-versions` and `.ruby-version`
+Version managers use these files to choose which version of ruby to make available in the
+current shell session. You should always use ruby version `2.5.1` when developing for
+Dreamhost shared hosting and these files tell your tools to use that version or warn
+you if you don't have it installed.
