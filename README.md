@@ -10,6 +10,7 @@ A starter project for building sqlite3 backed sinatra apps hosted on Dreamhost's
 * A quick way to start a new sqlite3 / sinatra project on Dreamhost.
 * There's some boiler plate to get things to play nice with passenger.
 * Sinatra expects things to be in certain places by default.
+* Gems are expected to be in a certain place to work.
 
 # How to use?
 I find the easies way to get started is to:
@@ -17,15 +18,20 @@ I find the easies way to get started is to:
 * Set up a domain or subdomain through the dreamhost panel.
 * Make sure that the user that owns hosing for that domain has ssh access.
 * ssh in as that user and delete the main directory for the new domain or subdomain.
-  * eg: `rm my_new_subdomain.example.com`
+  * eg: `rm -r my_new_subdomain.example.com`
 * clone this repo naming it the same as that folder you just removed.
   * eg: `git clone https://github.com/g-re-g/ruby-on-dreamhost my_new_subdomain.example.com`
+* run `cd my_new_subdomain.example.com` to enter the projects directory.
 * run `touch tmp/restart.txt` to restart passenger.
 * visit your site (eg: `my_new_subdomain.example.com`) and confirm everything is working.
 
-# More reading
-* https://help.dreamhost.com/hc/en-us/articles/360003836911-Ruby-at-DreamHost
-* https://help.dreamhost.com/hc/en-us/articles/215769578-Passenger-overview
+# Adding more gems
+
+* Add them to `Gemfile`
+* Always specify an exact version, not a version range. E.g. `gem 'sinatra', '2.2.4'`
+* Make sure your gem supports ruby 2.5 or earlier.
+* Run `bundle install --path vendor/bundle`
+* Add a line for the gem at the top of main.rb. E.g. `gem 'sinatra', '2.2.4'`
 
 # What's in this starter project?
 
@@ -77,3 +83,7 @@ Version managers use these files to choose which version of ruby to make availab
 current shell session. You should always use ruby version `2.5.1` when developing for
 Dreamhost shared hosting and these files tell your tools to use that version or warn
 you if you don't have it installed.
+
+# More reading
+* https://help.dreamhost.com/hc/en-us/articles/360003836911-Ruby-at-DreamHost
+* https://help.dreamhost.com/hc/en-us/articles/215769578-Passenger-overview
