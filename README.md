@@ -13,7 +13,7 @@ A starter project for building sqlite3 backed sinatra apps hosted on Dreamhost's
 * Gems are expected to be in a certain place to work.
 
 # How to use?
-I find the easies way to get started is to:
+I find the easiest way to get started is to:
 
 * Set up a domain or subdomain through the dreamhost panel.
 * Make sure that the user that owns hosing for that domain has ssh access.
